@@ -26,5 +26,17 @@ html {
 	background-size: cover;
 	background-position:center center;
 	background-repeat:no-repeat;
+	font-family: Oxygen;
+}
+#title{
+	margin-top:10%;
+}
+#title h2{
+	text-align:center;
 	
+	font-size: 60px;
+}
+@font-face{
+	font-family: Oxygen;
+	src: url('../fonts/Quicksand-Light.ttf');
 }
