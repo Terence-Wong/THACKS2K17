@@ -24,11 +24,13 @@
   padding: 0 6px;
   margin: 0;
   width: auto;
+  text-align: center;
   max-width: inherit;
 }
 .bootstrap-tagsinput.form-control input::-moz-placeholder {
   color: #777;
   opacity: 1;
+ 
 }
 .bootstrap-tagsinput.form-control input:-ms-input-placeholder {
   color: #777;
