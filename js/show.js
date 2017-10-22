@@ -1,4 +1,5 @@
 window.data=[]
+window._data=[]
 $(document).ready(function(){
     
     $("#show_results").click(function(){
@@ -11,7 +12,9 @@ $(document).ready(function(){
 		divLoad.innerHTML = "<h1><span class='animate-flicker'>NOW LOADING...</span></h1>";
 		 xhr.onreadystatechange = function() {
 			if (xhr.readyState === 4) {
-			  window.data=JSON.parse(xhr.response); //Outputs a DOMString by default
+			  window._data=JSON.parse(xhr.response); //Outputs a DOMString by default
+			  window._data=window._data.map(a=> [a[0],parseFloat(a[1]).toFixed(2)+"%",a[1]])
+			  window.data=window._data;
 			  CreateTableFromJSON();
 
 			}

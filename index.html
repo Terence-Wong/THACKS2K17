@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
-<title>THACKS2017</title>
+<title>Dependisearch</title>
 <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='http://nitinhayaran.github.io/jRange/jquery.range.css'>
+
 <link rel='stylesheet prefetch' href='css/tags.css'>
 <link rel='stylesheet' href='css/layout.css'>
 <link rel='stylesheet' href='css/animate.css'>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="http://nitinhayaran.github.io/jRange/jquery.range.js"></script>
+
 </head>
 
 <body>
@@ -31,7 +35,9 @@
         </div>
 		<div id="data" style="text-align: center;">
 			<div id="stuff" align="center" >
-				<div id="tableHeader">
+			Usage Range:
+			<input class="range-slider" type="hidden" value="0,100"/>
+				<div id="tableHeader" style="margin-top: 5%;">
 					<table cellpadding="0" cellspacing="0" border="0">
 						<thead>
 							<tr>
@@ -81,7 +87,23 @@
             window.addEventListener('scroll', function(){ // on page scroll
                 requestAnimationFrame(parallax) // call parallax() on next available screen repaint
             }, false)
- 
+			 $('.range-slider').jRange({
+							from: 0,
+							to: 100,
+							step: 1,
+							scale: [0,25,50,75,100],
+							format: '%s',
+							showLabels: true,
+							isRange : true,
+							width:400,
+							onstatechange:function(v){
+								var r=v.split(",");
+								r=[parseInt(r[0]),parseInt(r[1])];
+								console.log(r)
+								window.data=window._data.filter(q=>r[0]<=q[2]&&q[2]<=r[1])
+								CreateTableFromJSON()
+							}
+						});
  
         </script>
 		<script src='js/table.js'></script>

@@ -146,3 +146,7 @@ td{
     font-family: Oxygen;
     src: url('../fonts/Quicksand-Light.ttf');
 }
+.pointer-label{
+	color:white !important;
+	background:transparent !important;
+}
