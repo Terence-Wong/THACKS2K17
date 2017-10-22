@@ -65,7 +65,6 @@ html {
     height: 100%;
 	top: 100%;
     font-family: Oxygen;
-	
 	opacity: 1;
 }
 #showData{
@@ -73,6 +72,7 @@ html {
 	overflow-x:auto;
 	margin-top: 0px;
 	border: 1px solid rgba(255,255,255,0.3);
+	z-index: 100;
 	
 }
 table{
@@ -111,6 +111,7 @@ td{
 #main{
 	height: 80%;
 	width:100%;
+	z-index: -10; !important
 }	
 .btn-dark {
     color: #fff;
