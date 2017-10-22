@@ -12,22 +12,47 @@
 <div id="home">
 	
 	<body>
-		<div id="home">
-			<div id="title">
-				<h2>library search.</h2>
-		    </div>
-			<div class="form-group" align="center">
-				<input type="text" value="" data-role="tagsinput" class="form-control" />
-			</div>
-			<div align="center">
-			<button type="button" class="btn btn-warning" value="Show" id="show_results">Search</button>
-			<div id="results" style="display: none;">
-			<h1><div align="center">Suggested Libraries</div></h1>
-			<div align="center">insert backend here</div>
-			</div>
-			</div>
-		</div>
+		<div id="home" style="top: 0px;">
+           
+        </div>
+        <div id="input" style="top: 0px;">
+            <div id="title">
+                <h2>library search.</h2>
+            </div>
+                   
+            <div class="form-group" align="center">
+                <input id="search_bar" type="text" value="" data-role="tagsinput" class="form-control" />
+                <button type="button" align="center" class="btn btn-warning" value="Show" id="show_results">Search</button>
+            </div>
+           
+           
+        </div>
 </div>
+<script>
+ 
+               
+            // Create cross browser requestAnimationFrame method:
+            window.requestAnimationFrame = window.requestAnimationFrame
+                                           || window.mozRequestAnimationFrame
+                                           || window.webkitRequestAnimationFrame
+                                           || window.msRequestAnimationFrame
+                                           || function(f){setTimeout(f, 1000/60)}
+ 
+            var a = document.getElementById('home')
+            var b = document.getElementById('input')
+ 
+            function parallax(){
+                var scrolltop = window.pageYOffset // get number of pixels document has scrolled vertically
+                a.style.top = -scrolltop * 0 + 'px' // move bubble1 at 20% of scroll speed
+                b.style.top = scrolltop * 0.5 + 'px' // move bubble2 at 50% of scroll speed
+            }
+ 
+            window.addEventListener('scroll', function(){ // on page scroll
+                requestAnimationFrame(parallax) // call parallaxbubbles() on next available screen repaint
+            }, false)
+ 
+ 
+        </script>
 <script src='js/show.js'></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
 <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
