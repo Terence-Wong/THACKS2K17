@@ -83,7 +83,7 @@
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#bdfade), to(#76fabc));
   background-image: -webkit-linear-gradient(top, #bdfade, #76fabc);
   background-image: -o-linear-gradient(top, #bdfade, #76fabc);
-  background-image: linear-gradient(to bottom, #bdfade, #76fabc);
+  background-image: linear-gradient(to bottom, #bda2a4, #7f686d);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffbdfade', endColorstr='#ff76fabc', GradientType=0);
 }
