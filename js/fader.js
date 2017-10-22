@@ -1,6 +1,6 @@
-var divs = $('#home'),
+var divs = $('#home,#input'),
     limit = 600;  /* scrolltop value when opacity should be 0 */
-var hivs = $('#data'),
+var hivs = $('#data,#content'),
     himit = 200;  /* scrolltop value when opacity should be 0 */
 $(window).on('scroll', function() {
    var st = $(this).scrollTop();
@@ -10,6 +10,6 @@ $(window).on('scroll', function() {
       divs.css({ 'opacity' : (1 - st/limit) });
    }
    if(himit <= st){
-	  hivs.css({ 'opacity' : (1-(1 - st/limit)) });
+	  hivs.css({ 'opacity' : (1- (1 - st/limit)) });
    }
 });

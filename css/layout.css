@@ -65,15 +65,25 @@ html {
 	
 	opacity: 1;
 }
-
+#showData{
+	height:100%;
+}
+#showData table{
+	display: table-cell;
+	vertical-align: middle;
+	padding-top: 150%;
+}
 #main{
 	height: 80%;
 	width:100%;
-}
+}	
 .btn-dark {
     color: #fff;
     background-color: #88686f;
     border-color: #ffffff;
+}
+.btn-dark:hover {
+	color: #fff;
 }
 #content button{
 	margin:auto;
