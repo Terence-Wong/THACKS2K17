@@ -11,7 +11,7 @@ $(document).ready(function(){
 	$("#go_back").click(function(){
 		
 		document.getElementById('home').scrollIntoView({block: 'start', behavior: 'smooth'});
-		document.getElementById("search_bar").value = "";
+		$('#search_bar').tagsinput('removeAll');
     });  
 });
 
