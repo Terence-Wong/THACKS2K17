@@ -34,6 +34,8 @@ html {
     width: 100%;
     height: 100%;
     font-family: Oxygen;
+	
+	opacity: 1;
 }
 #data{
     position: absolute;
