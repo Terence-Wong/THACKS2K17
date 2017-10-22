@@ -9,7 +9,7 @@ $(document).ready(function(){
 		var tags_request = document.getElementById("search_bar").value;
 		xhr.open('POST', 'http://100.64.95.208:3000/data?tags='+tags_request, true);
 		var divLoad = document.getElementById("showData")
-		divLoad.innerHTML = "<h1><span class='animate-flicker'>NOW LOADING...</span></h1>";
+		divLoad.innerHTML = "<h1><span class='animate-flicker'>FINDING PACKAGES...</span></h1>";
 		 xhr.onreadystatechange = function() {
 			if (xhr.readyState === 4) {
 			  window._data=JSON.parse(xhr.response); //Outputs a DOMString by default
