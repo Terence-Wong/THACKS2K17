@@ -8,7 +8,10 @@ $(document).ready(function(){
 		document.getElementById('data').scrollIntoView({block: 'start', behavior: 'smooth'});
     });  
 	
-	$("#hide_results").click(function(){
-        $("#results").fadeOut();
+	$("#go_back").click(function(){
+		
+		document.getElementById('home').scrollIntoView({block: 'start', behavior: 'smooth'});
+		document.getElementById("search_bar").value = "";
     });  
 });
+

@@ -46,6 +46,9 @@ html {
     overflow:hidden;
     font-family: Oxygen;
 }
+#data button{
+	margin:auto;
+}
 #title{
     margin-top:10%;
 }
