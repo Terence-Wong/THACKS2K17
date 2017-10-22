@@ -1,16 +1,19 @@
+window.data=[]
 $(document).ready(function(){
     
     $("#show_results").click(function(){
 		var xhr = new XMLHttpRequest();
 		var tags_request = document.getElementById("search_bar").value;
 		xhr.open('POST', 'http://100.64.95.208:3000/data?tags='+tags_request, true);
+		 xhr.onreadystatechange = function() {
+			if (xhr.readyState === 4) {
+			  window.data=JSON.parse(xhr.response); //Outputs a DOMString by default
+			  CreateTableFromJSON();
+
+			}
+		  }
 		xhr.send();
-		document.getElementById('data')
-		document.getElementById('data').scrollIntoView({block: 'start', behavior: 'smooth'});
-		
-		
-		CreateTableFromJSON();
-		
+		document.getElementById('data').scrollIntoView({block: 'start', behavior: 'smooth'});		
     });  
 	
 	$("#go_back").click(function(){
@@ -22,51 +25,11 @@ $(document).ready(function(){
 });
 
 function CreateTableFromJSON() {
-        var Dependancies = [
-            {
-                "Name": "Express",
-                "Version": "1.2" 
-            },
-			{
-				"Name": "Dick",
-                "Version": "6.9" 
-			},
-			{
-                "Name": "Express",
-                "Version": "1.2" 
-            },
-			{
-				"Name": "Dick",
-                "Version": "6.9" 
-			},
-			{
-                "Name": "Express",
-                "Version": "1.2" 
-            },
-			{
-				"Name": "Dick",
-                "Version": "6.9" 
-			},
-			{
-                "Name": "Express",
-                "Version": "1.2" 
-            },
-			{
-				"Name": "Dick",
-                "Version": "6.9" 
-			}
-        ]
-
+       
         // EXTRACT VALUE FOR HTML HEADER. 
         // ('Book ID', 'Book Name', 'Category' and 'Price')
-        var col = [];
-        for (var i = 0; i < Dependancies.length; i++) {
-            for (var key in Dependancies[i]) {
-                if (col.indexOf(key) === -1) {
-                    col.push(key);
-                }
-            }
-        }
+        var col = ['Name','Usage'];
+
 
         // CREATE DYNAMIC TABLE.
         var table = document.createElement("table");
@@ -82,13 +45,13 @@ function CreateTableFromJSON() {
         //}
 
         // ADD JSON DATA TO THE TABLE AS ROWS.
-        for (var i = 0; i < Dependancies.length; i++) {
+        for (var i = 0; i < data.length; i++) {
 
             tr = table.insertRow(-1);
 
             for (var j = 0; j < col.length; j++) {
                 var tabCell = tr.insertCell(-1);
-                tabCell.innerHTML = Dependancies[i][col[j]];
+                tabCell.innerHTML = data[i][j];
             }
         }
 
