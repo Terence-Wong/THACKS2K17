@@ -25,7 +25,35 @@ function CreateTableFromJSON() {
             {
                 "Name": "Express",
                 "Version": "1.2" 
-            }
+            },
+			{
+				"Name": "Dick",
+                "Version": "6.9" 
+			},
+			{
+                "Name": "Express",
+                "Version": "1.2" 
+            },
+			{
+				"Name": "Dick",
+                "Version": "6.9" 
+			},
+			{
+                "Name": "Express",
+                "Version": "1.2" 
+            },
+			{
+				"Name": "Dick",
+                "Version": "6.9" 
+			},
+			{
+                "Name": "Express",
+                "Version": "1.2" 
+            },
+			{
+				"Name": "Dick",
+                "Version": "6.9" 
+			}
         ]
 
         // EXTRACT VALUE FOR HTML HEADER. 
@@ -46,11 +74,11 @@ function CreateTableFromJSON() {
 
         var tr = table.insertRow(-1);                   // TABLE ROW.
 
-        for (var i = 0; i < col.length; i++) {
-            var th = document.createElement("th");      // TABLE HEADER.
-            th.innerHTML = col[i];
-            tr.appendChild(th);
-        }
+        //for (var i = 0; i < col.length; i++) {
+        //    var th = document.createElement("th");      // TABLE HEADER.
+        //    th.innerHTML = col[i];
+        //    tr.appendChild(th);
+        //}
 
         // ADD JSON DATA TO THE TABLE AS ROWS.
         for (var i = 0; i < Dependancies.length; i++) {
