@@ -12,6 +12,7 @@
 
 	
 	<body>
+		
 		<div id="home" style="top: 0px;">
            
         </div>
@@ -28,11 +29,13 @@
            
         </div>
 		<div id="data">
+			
+		</div>
+		<div id="content">
 			<div id="main">
 				
 			</div>
 			<button type="button" align="center" class="btn btn-dark" value="Back" id="go_back">Back</button>
-			
 		</div>
 
 		<script>
@@ -45,17 +48,22 @@
                                            || window.msRequestAnimationFrame
                                            || function(f){setTimeout(f, 1000/60)}
  
-            var a = document.getElementById('home')
+            //var a = document.getElementById('home')
             var b = document.getElementById('input')
+			
+			//var c = document.getElementById('data')
+			var d = document.getElementById('content')
  
             function parallax(){
                 var scrolltop = window.pageYOffset // get number of pixels document has scrolled vertically
-                a.style.top = -scrolltop * 0 + 'px' // move bubble1 at 20% of scroll speed
-                b.style.top = scrolltop * 0.5 + 'px' // move bubble2 at 50% of scroll speed
+                //a.style.top = -scrolltop * 0 + 'px' 
+                b.style.top = scrolltop * 0.5 + 'px' 
+				var DocHeight = $("#data").height();
+				d.style.top =  (DocHeight*0.5 + scrolltop * 0.5) + 'px' 
             }
  
             window.addEventListener('scroll', function(){ // on page scroll
-                requestAnimationFrame(parallax) // call parallaxbubbles() on next available screen repaint
+                requestAnimationFrame(parallax) // call parallax() on next available screen repaint
             }, false)
  
  

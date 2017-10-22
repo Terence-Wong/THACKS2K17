@@ -1,4 +1,4 @@
-var divs = $('#input,#home'),
+var divs = $('#home'),
     limit = 600;  /* scrolltop value when opacity should be 0 */
 var hivs = $('#data'),
     himit = 200;  /* scrolltop value when opacity should be 0 */
