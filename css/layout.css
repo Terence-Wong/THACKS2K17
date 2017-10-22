@@ -44,10 +44,28 @@ html {
     height: 100%;
     top: 100%;
     overflow:hidden;
+	background:url('../images/background2.png')center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position:center center;
+    background-repeat:no-repeat;
     font-family: Oxygen;
+}
+
+#main{
+	height: 80%;
+	width:100%;
+}
+.btn-dark {
+    color: #fff;
+    background-color: #88686f;
+    border-color: #ffffff;
 }
 #data button{
 	margin:auto;
+	display: block;
 }
 #title{
     margin-top:10%;
