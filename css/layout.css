@@ -96,6 +96,9 @@ td{
 	color: #fff;
 	border-bottom: solid 1px rgba(255,255,255,0.1);
 }
+tr{
+	line-height: 0px
+}
 #tableHeader{
 	background-color: rgba(255,255,255,0.3);
 }
